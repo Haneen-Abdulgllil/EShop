@@ -1,0 +1,72 @@
+<%-include('../includes/header.ejs') %>
+
+<body class="js">
+        <%-include('../includes/navbar.ejs') %>
+        <%-include('../includes/inner_header.ejs') %>	
+
+
+        	<!-- Breadcrumbs -->
+	<div class="breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bread-inner">
+                            <ul class="bread-list">
+                                <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
+                                <li class="active"><a href="blog-single.html">products</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumbs -->
+        
+<div class="container">
+    <% for( let index = 0; index < products.length; index++ ) { %>
+        <div class="row align-items-start">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+
+                <a href="">
+
+                        <img src="<%= products[index].thumbnail %>"  class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                        <h5 class="card-title">
+                                <a href="<%= products.id %>"></a>
+                                    <%= products[index].title %>
+                                </a>
+                        </h5>
+                        <p class="card-text">  
+                            <a href="<%= products.id %>">
+                                    <%= products[index].description %>
+                                </a>
+                            </p>
+                            <div>
+                                
+                                    <h3><span>$</span>
+                                        <%= products[index].price %>
+                                    </h3>
+                                    <a href="" class="btn btn-light"> show more</a>
+                            </div>
+        
+                    
+                        </div>
+            </div>
+                </a>
+
+    </div>
+    </div>
+        <% }  %>
+</div>
+        
+    
+
+        
+                
+        <%- include('../includes/footer.ejs') %>
+
+
+
+</body>
+

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="row">
+                <% if (products !=null) { %>
+                    <% for(let category of products){ %>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+            
+                                    <img src=<%= products.thumbnail %> />
+                
+                                <div class="detail-box">
+                                    <h5>
+                                        <%= category.title %>
+
+                                    </h5>
+                                </div>
+                            </div>
+        </div>
+                        <% } %>
+                <% } %>
+            
+            
+        
+        
+</body>
+</html>
+
+
+

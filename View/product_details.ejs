@@ -1,0 +1,82 @@
+
+
+<%-include('../includes/header.ejs') %>
+
+<body class="js">
+        <%-include('../includes/navbar.ejs') %>
+        <%-include('../includes/inner_header.ejs') %>	
+
+
+        <!-- Breadcrumbs -->
+	<div class="breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bread-inner">
+                            <ul class="bread-list">
+                                <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
+                                <li class="active"><a href="blog-single.html">products</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumbs -->
+        
+<div class="container">
+
+        <div class="row px-xl-5">
+                <div class="col-lg-5 p-5">
+
+        <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+                
+                <div class="carousel-inner border">
+                <div class="carousel-item active">
+
+                    <img class="w-100 h-100" src=<%=products.thumbnail %> alt="Image">
+                </div>
+                <% for( let index=0; index < products.images.length; index++ ) { %>
+                <div class="carousel-item">
+                        <img class="w-100 h-100" src=<%= products.images[index] %> alt="Image">
+                </div>
+                <% } %>
+                
+                </div>
+
+                    <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                            <i class="fa fa-2x fa-angle-left text-dark"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                            <i class="fa fa-2x fa-angle-right text-dark"></i>
+                        </a>
+        </div>
+
+            </div>
+<div class="col-lg-7 p-5">
+        <h3 class="font-weight-semi-bold"><%=products.title%></h3>
+        <div class="d-flex mb-3">
+            <div class="text-primary mr-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <small class="pt-1"><%= products. rating %></small>
+        </div>
+        <h3 class="font-weight-semi-bold mb-4"><%=products.price%>$</h3>
+        <p class="mb-4"><%=products.description%>.</p>
+    
+        </div>
+            </div>
+        
+</div>
+    
+        
+                <%- include('../includes/footer.ejs') %>
+
+
+
+</body>
+
